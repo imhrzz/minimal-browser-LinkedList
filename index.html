@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Browser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Main browser section -->
+    <div id="main">
+      <div id="controls">
+        <button id="backBtn">Back</button>
+        <button id="forwardBtn">Forward</button>
+        <input type="text" id="urlInput" placeholder="Enter URL (e.g. wikipedia.org)">
+        <button id="loadBtn">Load</button>
+      </div>
+      <iframe id="browserWindow"></iframe>
+    </div>
+
+    <!-- Details side panel -->
+    <div id="detailsPanel">
+      <h2>Browser Info</h2>
+      <p>This browser uses an iframe to load websites. Many modern websites block iframe embedding due to security headers.</p>
+
+      <p>Only websites that do not restrict iframe usage (usually non-profit or developer-friendly sites) will display properly.</p>
+
+      <p>Blocked sites use HTTP headers like:</p>
+      <ul>
+        <li>X-Frame-Options: DENY</li>
+        <li>Content-Security-Policy: frame-ancestors 'none';</li>
+      </ul>
+
+      <h3>Sites That Work</h3>
+      <p>You can copy and paste these into the input box:</p>
+      <ul>
+        <li>wikipedia.org</li>
+        <li>example.com</li>
+        <li>neverssl.com</li>
+        <li>mdn.github.io/learning-area/html/</li>
+        <li>harshfolio.vercel.app</li>
+      </ul>
+
+      <h3>Sites That Do Not Work</h3>
+      <ul>
+        <li>google.com</li>
+        <li>youtube.com</li>
+        <li>github.com</li>
+        <li>facebook.com</li>
+      </ul>
+    </div>
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
